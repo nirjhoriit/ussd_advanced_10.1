@@ -60,19 +60,19 @@ public class USSDServiceKT extends AccessibilityService {
             USSDController.callbackInvoke.over(response != null ? response : "");
         } else if (isUSSDWidget(event)) {
 //            Timber.d("catch a USSD widget/Window");
-            if (notInputText(event)) {
+           // if (notInputText(event)) {
                 // not more input panels / LAST MESSAGE
                 // sent 'OK' button
 //                Timber.d("No inputText found & closing USSD process");
-                clickOnButton(event, 0);
-                ussd.stopRunning();
-                USSDController.callbackInvoke.over(response != null ? response : "");
-            } else {
+             //   clickOnButton(event, 0);
+              //  ussd.stopRunning();
+              //  USSDController.callbackInvoke.over(response != null ? response : "");
+           // } else {
                 // sent option 1
                 if (ussd.getSendType() == true)
                     ussd.getCallbackMessage().invoke(event);
                 else USSDController.callbackInvoke.responseInvoke(event);
-            }
+           // }
         }
 
     }
