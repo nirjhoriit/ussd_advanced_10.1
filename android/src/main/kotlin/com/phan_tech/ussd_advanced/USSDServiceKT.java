@@ -47,7 +47,7 @@ public class USSDServiceKT extends AccessibilityService {
         }
         String response = null;
         if(!event.getText().isEmpty()) {
-            response = event.getText().get(0).toString();
+            response = event.getText().get(1).toString();
         }
         if (LoginView(event) && notInputText(event)) {
             // first view or logView, do nothing, pass / FIRST MESSAGE
