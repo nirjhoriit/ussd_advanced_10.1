@@ -277,7 +277,7 @@ class UssdAdvancedPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Basic
 
         try {
           if(ev.text.isNotEmpty()) {
-            result.success(ev.text.first().toString())
+            result.success(ev.text.second().toString())
           }else{
             result.success(null)
           }
